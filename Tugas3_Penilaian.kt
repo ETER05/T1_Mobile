@@ -79,7 +79,7 @@ fun main() {
             }
 
             // TAMPILAN HASIL
-            println("==== HASIL PENILAIAN ====")
+            println("\n==== HASIL PENILAIAN ====")
             println("Nama           : $nama")
             println("Nilai UTS      : $uts")
             println("Nilai UAS      : $uas")
