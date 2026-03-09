@@ -80,16 +80,29 @@ fun main() {
             // jika lambda hanya memiliki satu parameter
             // contoh lambda { parameter -> kode }
             // dalam kasus ini it merepresentasikan satu objek NilaiMahasiswa dari daftarNilaiMahasiswa
-            
+
             format(lulus) 
             // contoh lambda 2 parameter ada di fungsi format
             // yaitu pada forEachIndexed { index, mhs -> }
+
+            println("\n ===== MAHASISWA LULUS =====\n")
+            val descGrade = lulus.sortedByDescending { it.nilai }
+            descGrade.forEachIndexed { index, list ->
+                println("${index+1}. ${list.nama} - ${list.nilai} (${getGrade(list.nilai)})")
+            }
 
         } else if (input == "3") { // === FILTER MAHASISWA YANG TIDAK LULUS ===
 
             println("\n ===== DATA MAHASISWA TIDAK LULUS (Nilai < 70) =====\n")
             val tidaklulus = daftarNilaiMahasiswa.filter {it.nilai < 70}
             format(tidaklulus)
+
+            println("\n ===== MAHASISWA TIDAK LULUS =====\n")
+            val descGrade = tidaklulus.sortedByDescending { it.nilai }
+            descGrade.forEachIndexed { index, list ->
+                println("${index+1}. ${list.nama} - ${list.nilai} (${getGrade(list.nilai)})")
+            }
+            
 
         } else if (input == "4") { // === STATISTIK ===
 
